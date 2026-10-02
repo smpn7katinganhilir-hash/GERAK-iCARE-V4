@@ -1,5 +1,5 @@
 /* GERAK iCARE API - single gateway for HTML/CSS/JS frontend */
-const API_URL = window.GERAK_API_URL || "https://script.google.com/macros/s/AKfycbx8KEXcpv0LFazkHnR6vzSInsDGvC7fYwJ6UV5MqTnFaXnwfCD-JqPN4QLADiUQNklO/exec";
+const API_URL = window.GERAK_API_URL || "https://script.google.com/macros/s/AKfycby6UyUkKsENBZvKOnGqR7UrZKLoaigSDJPq_9UCdLFHfhE5fGPW92KnV2duB3NGoFEZ/exec";
 
 async function api(action, payload = {}) {
   const response = await fetch(API_URL, {
