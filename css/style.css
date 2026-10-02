@@ -150,3 +150,293 @@ body.dark-mode{--dashboard-bg:#171522;--panel:#211e2c;--cream:#211e2c;--ink:#f4e
 .ruang-gtk-button:hover{transform:translateY(-1px);box-shadow:0 9px 18px rgba(128,98,213,.25)}
 @media(max-width:900px){.guru-inspiration-grid{grid-template-columns:1fr}.motivation-card,.inspiration-card{min-height:130px}}
 @media(max-width:520px){.motivation-card,.inspiration-card{padding:15px;gap:11px}.motivation-mark,.inspiration-visual{width:43px;height:43px;min-width:43px;border-radius:13px;font-size:20px}.motivation-content h2,.inspiration-content h2{font-size:15px}.motivation-refresh{width:34px;height:34px}}
+
+
+/* =========================================================
+   GURU FORM EXPERIENCE — Mood Check / Refleksi / Evaluasi
+   Selaras dengan visual dashboard Guru: soft lavender, glassy
+   cards, rounded controls, dan ruang yang lebih lega.
+   ========================================================= */
+.guru-form-page{
+  position:relative;
+  overflow:hidden;
+  padding:24px;
+  background:
+    radial-gradient(circle at 92% 7%,rgba(177,145,239,.16),transparent 28%),
+    radial-gradient(circle at 7% 92%,rgba(238,174,204,.12),transparent 25%),
+    linear-gradient(145deg,#fbf9ff 0%,#fff 48%,#faf7ff 100%);
+  border-color:#e9e0f6;
+}
+.guru-form-page:before{
+  content:"";
+  position:absolute;
+  width:190px;height:190px;
+  right:-65px;top:-70px;
+  border-radius:50%;
+  background:rgba(155,124,232,.09);
+  pointer-events:none;
+}
+.guru-form-page .page-heading{
+  position:relative;
+  z-index:1;
+  max-width:820px;
+  margin:0 auto 18px;
+  padding:19px 21px;
+  border:1px solid rgba(224,214,243,.95);
+  border-radius:20px;
+  background:rgba(255,255,255,.76);
+  box-shadow:0 10px 28px rgba(91,72,132,.07);
+}
+.guru-form-page .page-heading:before{
+  content:"";
+  display:grid;
+  place-items:center;
+  float:left;
+  width:42px;height:42px;
+  margin:0 13px 2px 0;
+  border-radius:14px;
+  font-size:20px;
+  color:#fff;
+  box-shadow:0 8px 18px rgba(117,86,188,.2);
+}
+.mood-form-page .page-heading:before{content:"♡";background:linear-gradient(145deg,#8061d5,#a88be6)}
+.refleksi-form-page .page-heading:before{content:"✎";background:linear-gradient(145deg,#8d69d7,#d28fb5)}
+.evaluasi-form-page .page-heading:before{content:"▣";background:linear-gradient(145deg,#d89a42,#e7b76c)}
+.guru-form-page .page-heading:after{content:"";display:block;clear:both}
+.guru-form-page .page-heading .eyebrow{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#f1ebff;
+  color:#7358bd;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.guru-form-page .page-heading h2{
+  margin:8px 0 4px;
+  color:#3d3156;
+  font-size:22px;
+  line-height:1.2;
+}
+.guru-form-page .page-heading p{
+  margin:0;
+  color:#8a7b9d;
+  font-size:10px;
+  line-height:1.6;
+}
+.guru-form-page form{
+  position:relative;
+  z-index:1;
+  width:min(820px,100%);
+  max-width:none;
+  margin:0 auto;
+  display:grid;
+  gap:13px;
+  padding:22px;
+  border:1px solid #e9e1f3;
+  border-radius:22px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 14px 36px rgba(79,63,119,.08);
+}
+.guru-form-page form > label{
+  position:relative;
+  display:grid;
+  gap:7px;
+  color:#5f5272;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.01em;
+}
+.guru-form-page form > label > input,
+.guru-form-page form > label > select,
+.guru-form-page form > label > textarea{
+  width:100%;
+  margin:0;
+  border:1px solid #e4dff0;
+  border-radius:13px;
+  outline:none;
+  background:#fbfaff;
+  color:#403653;
+  padding:12px 13px;
+  font-size:11px;
+  line-height:1.4;
+  transition:border-color .18s ease,box-shadow .18s ease,background .18s ease,transform .18s ease;
+}
+.guru-form-page form > label > input,
+.guru-form-page form > label > select{min-height:43px}
+.guru-form-page form > label > textarea{min-height:112px;resize:vertical}
+.guru-form-page form > label > input[readonly]{
+  background:linear-gradient(135deg,#f6f1ff,#faf7ff);
+  color:#7057ad;
+  font-weight:800;
+  border-color:#e3d8f5;
+}
+.guru-form-page form > label > input:focus,
+.guru-form-page form > label > select:focus,
+.guru-form-page form > label > textarea:focus{
+  border-color:#a88be2;
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(136,101,211,.10),0 7px 18px rgba(83,65,125,.05);
+}
+.guru-form-page form > label > select{
+  cursor:pointer;
+  appearance:auto;
+}
+.guru-form-page form > label > textarea::placeholder,
+.guru-form-page form > label > input::placeholder{color:#a8a0b2}
+.guru-form-page .optional{
+  color:#a59ab2;
+  font-size:8px;
+  font-weight:600;
+  margin-left:3px;
+}
+.guru-form-page .primary-cta{
+  justify-self:stretch;
+  width:100%;
+  border:0;
+  border-radius:13px;
+  padding:13px 16px;
+  background:linear-gradient(135deg,#8061d4,#9a7be0);
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.02em;
+  box-shadow:0 10px 20px rgba(118,88,194,.2);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+}
+.guru-form-page .primary-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 25px rgba(118,88,194,.26);
+  filter:saturate(1.04);
+}
+.guru-form-page .primary-cta:active{transform:translateY(0)}
+
+/* Refleksi: grouped PM indicators feel like a dashboard card. */
+.guru-form-page .pm-reflection-block{
+  margin:1px 0 0;
+  padding:15px;
+  border:1px solid #e8def6;
+  border-radius:18px;
+  background:linear-gradient(145deg,#fbf8ff,#f7f2ff);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+}
+.guru-form-page .pm-reflection-title{
+  align-items:center;
+  margin-bottom:10px;
+  padding-bottom:9px;
+  border-bottom:1px solid #ece5f5;
+}
+.guru-form-page .pm-reflection-title strong{
+  color:#6650ad;
+  font-size:10px;
+}
+.guru-form-page .pm-reflection-title small{
+  color:#978aa8;
+  font-size:8px;
+  line-height:1.4;
+}
+.guru-form-page .pm-reflection-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;
+}
+.guru-form-page .pm-reflection-grid label{
+  display:grid;
+  gap:6px;
+  margin:0!important;
+  padding:10px;
+  border:1px solid #ebe4f4;
+  border-radius:13px;
+  background:rgba(255,255,255,.76);
+  color:#6e6180;
+  font-size:8px;
+  font-weight:800;
+}
+.guru-form-page .pm-reflection-grid select{
+  width:100%;
+  min-height:38px;
+  border:1px solid #e3dced;
+  border-radius:10px;
+  background:#fff;
+  color:#594a70;
+  padding:8px 9px;
+  font-size:9px;
+}
+.guru-form-page .pm-reflection-grid select:focus{border-color:#a88be2;box-shadow:0 0 0 3px rgba(136,101,211,.08);outline:none}
+
+/* Weekly evaluation: compact score cards. */
+.guru-form-page .score-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:9px;
+  padding:2px 0;
+}
+.guru-form-page .score-grid label{
+  display:grid;
+  gap:8px;
+  min-height:110px;
+  padding:12px 10px;
+  border:1px solid #ece5f2;
+  border-radius:15px;
+  background:linear-gradient(145deg,#fff,#fbf9ff);
+  color:#625570;
+  font-size:8px;
+  font-weight:800;
+  line-height:1.35;
+}
+.guru-form-page .score-grid select{
+  align-self:end;
+  width:100%;
+  min-height:39px;
+  border:1px solid #dfd8ec;
+  border-radius:10px;
+  background:#f9f7fd;
+  color:#55476b;
+  padding:8px;
+  font-size:10px;
+  font-weight:800;
+  outline:none;
+}
+.guru-form-page .score-grid select:focus{border-color:#a88be2;box-shadow:0 0 0 3px rgba(136,101,211,.08)}
+.guru-form-page .score-info{
+  margin:0;
+  border:1px solid #eee7f4;
+  border-radius:13px;
+  padding:10px 12px;
+  background:#faf8fd;
+  color:#7e718e;
+  font-size:8px;
+  line-height:1.55;
+}
+
+/* Date/week fields have the same soft dashboard treatment. */
+.refleksi-form-page #refleksiTanggal,
+.evaluasi-form-page #evaluasiMinggu{background:#fbfaff}
+
+.dark-mode .guru-form-page{background:linear-gradient(145deg,#10243b,#132a44);border-color:#29445f}
+.dark-mode .guru-form-page .page-heading,.dark-mode .guru-form-page form{background:rgba(20,41,65,.92);border-color:#29445f}
+.dark-mode .guru-form-page .page-heading h2{color:#e7ddff}
+.dark-mode .guru-form-page .page-heading p,.dark-mode .guru-form-page .page-heading .eyebrow{color:#c8b8ee}
+.dark-mode .guru-form-page form > label{color:#c5d4e5}
+.dark-mode .guru-form-page form > label > input,.dark-mode .guru-form-page form > label > select,.dark-mode .guru-form-page form > label > textarea{background:#142941;border-color:#29445f;color:#e0ebf7}
+.dark-mode .guru-form-page .pm-reflection-block,.dark-mode .guru-form-page .score-info{background:#162d48;border-color:#29445f}
+.dark-mode .guru-form-page .pm-reflection-grid label,.dark-mode .guru-form-page .score-grid label{background:#142941;border-color:#29445f;color:#c5d4e5}
+.dark-mode .guru-form-page .pm-reflection-grid select,.dark-mode .guru-form-page .score-grid select{background:#10243b;border-color:#29445f;color:#e0ebf7}
+
+@media(max-width:900px){
+  .guru-form-page{padding:18px}
+  .guru-form-page .score-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .guru-form-page{padding:12px;border-radius:17px}
+  .guru-form-page .page-heading{padding:16px;border-radius:17px}
+  .guru-form-page .page-heading:before{width:38px;height:38px;margin-right:10px;font-size:18px;border-radius:12px}
+  .guru-form-page .page-heading h2{font-size:18px}
+  .guru-form-page form{padding:15px;border-radius:18px;gap:11px}
+  .guru-form-page .pm-reflection-grid,.guru-form-page .score-grid{grid-template-columns:1fr}
+  .guru-form-page .score-grid label{min-height:0}
+  .guru-form-page .pm-reflection-title{display:block}
+  .guru-form-page .pm-reflection-title small{display:block;margin-top:4px}
+}
